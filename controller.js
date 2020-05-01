@@ -46,3 +46,14 @@ exports.inputservis= function(req,res){
         }
     });
 };
+
+//menampilkan data join
+exports.showjoindata= function(req,res){
+    connection.query('SELECT T_user.nama_user,T_servis.tgl_servis,T_montir.nama_montir,T_sparepart.nama_sparepart,T_servis.jumlah_sparepart,T_sparepart.harga_sparepart,T_montir.harga_perjam + (T_servis.jumlah_sparepart * T_sparepart.harga_sparepart) as total_bayar FROM T_servis JOIN T_montir ON T_servis.id_montir = T_montir.id_montir JOIN T_sparepart ON T_servis.id_sparepart = T_sparepart.id_sparepart JOIN T_user ON T_servis.id_user = T_user.id_user', function(error, rows, fields){
+        if(error){
+            connection.log(error);
+        }else{
+            response.ok(rows, res)
+        }
+    });
+};
