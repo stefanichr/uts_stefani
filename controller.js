@@ -57,3 +57,4 @@ exports.showjoindata= function(req,res){
         }
     });
 };
+
