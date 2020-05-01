@@ -14,6 +14,7 @@ router.get('/api/v1/rahasia', verifikasi(2), auth.halamanrahasia);
 router.post('/api/v1/input-servis', verifikasi(2), jsonku.inputservis);
 router.get('/api/v1/showjoindata', verifikasi(2), jsonku.showjoindata);
 
+router.post('/api/v1/input-montir', verifikasiAdmin(1), jsonku.inputmontir);
 
 
 module.exports = router;
