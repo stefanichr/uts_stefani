@@ -16,5 +16,5 @@ router.get('/api/v1/showjoindata', verifikasi(2), jsonku.showjoindata);
 
 router.post('/api/v1/input-montir', verifikasiAdmin(1), jsonku.inputmontir);
 router.post('/api/v1/input-sparepart', verifikasiAdmin(1), jsonku.inputsparepart);
-
+router.post('/api/v1/input-user', verifikasiAdmin(1), jsonku.inputuser);
 module.exports = router;
