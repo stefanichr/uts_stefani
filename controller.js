@@ -105,3 +105,18 @@ exports.inputuser= function(req,res){
         }
     });
 };
+
+//input level
+exports.inputlevel= function(req,res){
+    var nama_level = req.body.nama_level;
+   
+
+    connection.query('INSERT INTO T_level(nama_level) VALUES(?)',[nama_level],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Berhasil Menambahkan Data!",res)
+        }
+    });
+};
