@@ -204,3 +204,16 @@ exports.ubahT_level = function(req,res){
         }
     });
     };
+
+    //menghapus data berdasarkan id
+    exports.hapusT_montir = function(req,res){
+    var id = req.body.id_montir;
+    connection.query('DELETE FROM T_montir WHERE id_montir=?',[id],
+    function(error, rows, fields){
+    if(error){
+    console.log(error);
+    }else{
+    response.ok("Berhasil hapus Data!",res)
+    }
+    });
+    }; 
