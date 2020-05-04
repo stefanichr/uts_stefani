@@ -9,6 +9,9 @@ module.exports = function(app) {
         app.route('/show-sparepart')
         .get(jsonku.showsparepart);
 
+        app.route('/show-sparepart-by-id/:id')
+        .get(jsonku.showsparepartbyid);
+
         app.route('/show-montir')
         .get(jsonku.showmontir);
 
