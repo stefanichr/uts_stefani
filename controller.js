@@ -139,3 +139,19 @@ exports.inputservis= function(req,res){
         }
     });
 };
+
+//mengubah data berdasarkan id
+exports.ubahT_montir = function(req,res){
+    var id = req.body.id_montir;
+    var nama = req.body.nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+    
+    connection.query('UPDATE T_montir SET nama_montir=?, harga_perjam=? WHERE id_montir=?', [nama,harga_perjam,id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Berhasil Ubah Data!",res)
+        }
+    });
+    };
