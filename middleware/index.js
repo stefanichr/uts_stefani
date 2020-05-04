@@ -23,5 +23,6 @@ router.post('/api/v1/input-servis', verifikasiAdmin(1), jsonku.inputservis);
 router.put('/api/v1/ubah-montir', verifikasiAdmin(1), jsonku.ubahT_montir);
 router.put('/api/v1/ubah-sparepart', verifikasiAdmin(1), jsonku.ubahT_sparepart);
 router.put('/api/v1/ubah-user', verifikasiAdmin(1), jsonku.ubahT_user);
+router.put('/api/v1/ubah-level', verifikasiAdmin(1), jsonku.ubahT_level);
 
 module.exports = router;
