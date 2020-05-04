@@ -12,5 +12,8 @@ module.exports = function(app) {
         app.route('/show-montir')
         .get(jsonku.showmontir);
 
+        app.route('/show-montir-by-id/:id')
+        .get(jsonku.showmontirbyid);
+
         
 }

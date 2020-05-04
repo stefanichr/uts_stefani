@@ -9,9 +9,21 @@ exports.index = function(reqc,res){
 
 //menampilkan semua data sparepart
 exports.showsparepart= function(req,res){
-    connection.query('SELECT * FROM T_sparepart', function(error, rows, fileds){
+    connection.query('SELECT * FROM T_sparepart', function(error, rows, fields){
         if(error){
-            connection.log(error);
+            console.log(error);
+        }else{
+            response.ok(rows, res)
+        }
+    });
+};
+
+
+//menampilkan semua data montir
+exports.showmontir= function(req,res){
+    connection.query('SELECT * FROM T_montir', function(error, rows, fields){
+        if(error){
+            console.log(error);
         }else{
             response.ok(rows, res)
         }
@@ -19,16 +31,17 @@ exports.showsparepart= function(req,res){
 };
 
 //menampilkan semua data montir
-exports.showmontir= function(req,res){
-    connection.query('SELECT * FROM T_montir', function(error, rows, fileds){
+exports.showmontirbyid= function(req,res){
+    var id_montir = req.params.id;
+
+    connection.query('SELECT * FROM T_montir WHERE id_montir=?',[id_montir], function(error, rows, fields){
         if(error){
-            connection.log(error);
+            console.log(error);
         }else{
             response.ok(rows, res)
         }
     });
 };
-
 //input servis
 exports.inputservis= function(req,res){
     var tgl_servis = req.body.tgl_servis;
