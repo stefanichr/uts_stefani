@@ -172,3 +172,20 @@ exports.ubahT_sparepart = function(req,res){
         }
     });
     };
+
+       //mengubah data berdasarkan id
+exports.ubahT_user = function(req,res){
+    var id = req.body.id_user;
+    var nama = req.body.nama_user;
+    var email = req.body.email;
+    var password = req.body.password;
+    var level = req.body.level;
+    connection.query('UPDATE T_user SET nama_user=?, email=?, password=?, level=? WHERE idT_user=?', [nama,email,password,level,id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Berhasil Ubah Data!",res)
+        }
+    });
+    };
