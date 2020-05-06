@@ -29,5 +29,6 @@ router.put('/api/v1/ubah-servis', verifikasiAdmin(1), jsonku.ubahT_servis);
 router.delete('/api/v1/hapus-montir', verifikasiAdmin(1), jsonku.hapusT_montir);
 router.delete('/api/v1/hapus-sparepart', verifikasiAdmin(1), jsonku.hapusT_sparepart);
 router.delete('/api/v1/hapus-user', verifikasiAdmin(1), jsonku.hapusT_user);
+router.delete('/api/v1/hapus-level', verifikasiAdmin(1), jsonku.hapusT_level);
 
 module.exports = router;
