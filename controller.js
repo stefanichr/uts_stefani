@@ -262,3 +262,16 @@ exports.ubahT_level = function(req,res){
     }
     });
     }; 
+
+      //menghapus data berdasarkan id
+      exports.hapusT_sparepart= function(req,res){
+        var id = req.body.id_sparepart;
+        connection.query('DELETE FROM T_sparepart WHERE id_sparepart=?',[id],
+        function(error, rows, fields){
+        if(error){
+        console.log(error);
+        }else{
+        response.ok("Berhasil hapus Data!",res)
+        }
+        });
+        }; 
